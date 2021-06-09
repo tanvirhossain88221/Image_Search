@@ -12,7 +12,7 @@ function App() {
     fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`)
       .then(res => res.json())
       .then(data => {
-        setImages(data.hits);
+        setImages(data.hits.slice(8, 35));
         setIsLoading(false);
       })
       .catch(err => console.log(err));
